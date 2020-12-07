@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How Much Time</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script defer src="index.js"></script>
+    <script defer src="src/countdown.js"></script>
+    <script defer src="src/user.js"></script>
+</head>
+
+<body>
+    <section class="hero is-dark is-fullheight">
+        <div class="hero-head">
+            <div class="container">
+                <div class="title is-large has-text-centered">
+                    <h1>How Much Time</h1>
+                </div>
+                <div class="columns">
+                    <div class="column is-one-half">
+                        <div class="container">
+                            <form id="countdown-form">
+                                <input type="hidden" name="id" id="id">
+                                <input type="hidden" name="user_id" id="user_id">
+                                <!-- <label for="name">Name: </label> -->
+                                <div class="control">
+                                    <input type="text" id="name" placeholder="Name" name="name"><br>
+                                </div>
+                                <!-- <label for="date">Date: </label> -->
+                                <div class="control">
+                                    <input type="date" id="date" name="date"><br>
+                                </div>
+                                <div class="field is-grouped">
+                                    <p class="control">
+                                        <button id="add-new-button" type="submit">Add New Counter</button>
+                                    </p>
+                                    <p class="control">
+                                        <button type="button" id="cd-edit">Edit Counter</button>
+                                    </p>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="container has-text-centered">
+                            <form id="user-form">
+                                <label for="name">Name: </label>
+                                <input type="hidden" name="id" id="id">
+                                <input type="text" id="name" name="name">
+                                <button type="submit">Log in</button>
+                                <button type="button" id="user-edit">Edit</button>
+                                <button type="button" id="user-delete">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="column"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-one-quarter">
+                        <aside class="menu">
+                            <p class="menu-label">
+                                Counters
+                            </p>
+                            <ul id="countdown-list" class="menu-list">
+
+                            </ul>
+                        </aside>
+                    </div>
+                    <div class="column is-two-thirds">
+                        <div id="card-container" class="container">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-foot">
+            <div class="container has-text-centered">
+                <h2>by: Clayton Pierce 2020</h2>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
