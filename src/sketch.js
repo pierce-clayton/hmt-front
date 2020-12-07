@@ -1,6 +1,11 @@
 let snowflakes = []; // array to hold snowflake objects
 let img;
 
+
+let speed = .1
+let direction = 1
+let x = -150
+
 function preload() {
     img = loadImage('http://localhost:3000/image.png');
 }
@@ -9,22 +14,28 @@ function setup() {
     createCanvas(windowWidth / 4, windowHeight * .6);
     fill(240);
     noStroke();
-    img.resize(windowWidth / 4, 0);
+    img.resize(windowWidth / 3, 0);
 
 }
 
 function draw() {
     // background('dark');
     clear()
+    x = x + speed * direction
+    if (x > 0) {
+        direction *= -1
+    }
+    if (x < -150) {
+        direction *= -1
+    }
     let t = frameCount / 60; // update time
-
     // create a random number of snowflakes each frame
     for (let i = 0; i < random(5); i++) {
         snowflakes.push(new snowflake()); // append snowflake object
     }
 
     // loop through snowflakes with a for..of loop
-    image(img, 0, (windowHeight * .6) - img.height);
+    image(img, x, ((windowHeight * .6) - img.height) + 50);
     for (let flake of snowflakes) {
         flake.update(t); // update snowflake position
         flake.display(); // draw snowflake

@@ -27,6 +27,7 @@ const newCountdownHandler = (e, user) => {
             fetch(`${URL}users/${user.id}`)
                 .then(r => r.json())
                 .then(user => {
+                    TIMERARRAY.forEach(clearInterval)
                     const list = document.getElementById('countdown-list')
                     list.innerHTML = ''
                     const cardContainer = document.getElementById('card-container')
@@ -113,6 +114,9 @@ const editUserHandler = (e) => {
         }))
         .then(r => r.json())
         .then(user => {
+            TIMERARRAY.forEach(clearInterval)
+            const cardContainer = document.getElementById('card-container')
+            cardContainer.innerHTML = ''
             const form = document.getElementById('user-form')
             form.name.value = ""
             const list = document.getElementById('countdown-list')
@@ -127,6 +131,7 @@ const deleteUserHandler = (e) => {
     const user_id = e.target.parentNode.id.value
     fetch(`${URL}users/${user_id}`, header('DELETE', {}))
         .then(() => {
+            TIMERARRAY.forEach(clearInterval)
             location.reload()
         })
 }

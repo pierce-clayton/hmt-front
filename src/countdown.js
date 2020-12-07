@@ -61,15 +61,16 @@ class Countdown {
         const seconds = parseInt(totalSeconds % 60)
         let retArr = []
         if (days) {
-            retArr.push(days + 'D')
+            // retArr.push(days + 'D')
+            retArr.push(days + ' ' + pluralize('Day', days))
         }
         if (hours) {
-            retArr.push(hours + 'H')
+            retArr.push(hours + ' ' + pluralize('Hour', hours))
         }
         if (minutes) {
-            retArr.push(minutes + 'M')
+            retArr.push(minutes + ' ' + pluralize('Minute', minutes))
         }
-        retArr.push(seconds + 'S')
+        retArr.push(seconds + ' ' + pluralize('Second', seconds) + '.')
 
         card.textContent = retArr.join(', ')
 
