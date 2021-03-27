@@ -14,7 +14,7 @@ How Much Time is a Javascript frontend and Rails backend application where I lea
 
 ## Rails
 
-The backend for this project is Rails. It is fairly light for this project. The information it stores is the user name and the date objects they create. This provides persistence and allows multiple users to have their own timers. The user authentication is name only.
+The backend for this project is Rails. It is available [here](https://github.com/technicholy/hmt-back). It is fairly light for this project. The information it stores is the user name and the date objects they create. This provides persistence and allows multiple users to have their own timers. The user authentication is name only.
 
 ## Javascript
 
